@@ -1,0 +1,321 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+}
+
+.login-card {
+    max-width: 430px;
+    width: 100%;
+    border-radius: 18px;
+}
+
+.card {
+    border-radius: 18px;
+}
+
+.form-label {
+    font-weight: 600;
+}
+
+.form-control,
+.form-select {
+    height: 48px;
+    border-radius: 10px;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.12);
+}
+
+.btn {
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.option-btn {
+    text-align: left;
+    margin-bottom: 10px;
+    padding: 12px;
+}
+
+.option-btn:hover {
+    transform: translateY(-1px);
+}
+
+@media (max-width: 576px) {
+
+    .login-card {
+        margin: 15px;
+        padding: 25px !important;
+    }
+}
+
+.back-btn img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+/* ============================= */
+/* QuizMaster Animated Login */
+/* ============================= */
+
+body {
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #eef5ff, #f8fbff);
+}
+
+/* Animated background circles */
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0.35;
+    filter: blur(2px);
+}
+
+body::before {
+    width: 280px;
+    height: 280px;
+    background: #0d6efd;
+    top: -100px;
+    left: -100px;
+    animation: floatCircle 7s ease-in-out infinite;
+}
+
+body::after {
+    width: 350px;
+    height: 350px;
+    background: #6f42c1;
+    bottom: -150px;
+    right: -120px;
+    animation: floatCircle2 9s ease-in-out infinite;
+}
+
+
+/* Login Card */
+
+.login-card {
+    width: 100%;
+    max-width: 430px;
+    border-radius: 22px !important;
+
+    animation: cardEntry 0.8s ease-out;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Card Hover */
+
+.login-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15) !important;
+}
+
+
+/* QuizMaster Title */
+
+.login-card h1 {
+    animation: titleAnimation 1s ease-out;
+}
+
+
+/* Subtitle */
+
+.login-card .text-muted {
+    animation: fadeIn 1.2s ease-out;
+}
+
+
+/* Form fields */
+
+.login-card .form-control,
+.login-card .form-select {
+    border-radius: 10px;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+/* Input focus */
+
+.login-card .form-control:focus,
+.login-card .form-select:focus {
+    transform: scale(1.02);
+
+    border-color: #0d6efd;
+
+    box-shadow:
+        0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+}
+
+
+/* Buttons */
+
+.login-card .btn {
+    border-radius: 10px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* Button hover */
+
+.login-card .btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 18px rgba(13, 110, 253, 0.2);
+}
+
+
+/* Start Quiz button */
+
+.login-card .btn-primary {
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Button shine animation */
+
+.login-card .btn-primary::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 60%;
+    height: 100%;
+
+    background: rgba(255, 255, 255, 0.25);
+
+    transform: skewX(-25deg);
+
+    animation: buttonShine 3s infinite;
+}
+
+
+/* ============================= */
+/* Animations */
+/* ============================= */
+
+@keyframes cardEntry {
+
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+@keyframes titleAnimation {
+
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes floatCircle {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(50px, 40px);
+    }
+
+}
+
+
+@keyframes floatCircle2 {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(-50px, -40px);
+    }
+
+}
+
+
+@keyframes buttonShine {
+
+    0% {
+        left: -100%;
+    }
+
+    35%,
+    100% {
+        left: 150%;
+    }
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 576px) {
+
+    .login-card {
+        margin: 15px;
+        padding: 25px !important;
+    }
+
+    .login-card h1 {
+        font-size: 30px;
+    }
+
+}
