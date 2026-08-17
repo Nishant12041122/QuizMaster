@@ -1,6 +1,7 @@
-// ================================
-// Supabase Connection
-// ================================
+// ========================================
+// Supabase
+// ========================================
+
 const SUPABASE_URL =
     "https://osjkvgvcmckfhgaduqhs.supabase.co";
 
@@ -14,9 +15,10 @@ const supabaseClient =
     );
 
 
-// ================================
+// ========================================
 // Student Data
-// ================================
+// ========================================
+
 const studentData = JSON.parse(
     localStorage.getItem("studentData")
 );
@@ -26,25 +28,23 @@ if (!studentData) {
 }
 
 
-// ================================
-// Student Information
-// ================================
-const studentInfo =
-    document.getElementById("studentInfo");
+// ========================================
+// Student Info
+// ========================================
 
-if (studentInfo) {
-    studentInfo.textContent =
-        studentData.name + " • " + studentData.branch;
-}
+document.getElementById("studentInfo").textContent =
+    studentData.name + " • " + studentData.branch;
 
 
-// ================================
-// Question Bank
-// ================================
+// ========================================
+// Questions
+// ========================================
+
 const questionBank = [
 
     {
-        question: "Which of the following is the correct way to declare an integer variable in C?",
+        question:
+            "Which of the following is the correct way to declare an integer variable in C?",
         options: [
             "integer x;",
             "int x;",
@@ -55,7 +55,8 @@ const questionBank = [
     },
 
     {
-        question: "Which function is the entry point of a C program?",
+        question:
+            "Which function is the entry point of a C program?",
         options: [
             "start()",
             "main()",
@@ -66,7 +67,8 @@ const questionBank = [
     },
 
     {
-        question: "Which header file is required for printf() and scanf()?",
+        question:
+            "Which header file is required for printf() and scanf()?",
         options: [
             "conio.h",
             "stdio.h",
@@ -77,7 +79,8 @@ const questionBank = [
     },
 
     {
-        question: "Which symbol is used to terminate a statement in C?",
+        question:
+            "Which symbol is used to terminate a statement in C?",
         options: [
             ":",
             ".",
@@ -88,7 +91,8 @@ const questionBank = [
     },
 
     {
-        question: "Which data type is used to store a single character?",
+        question:
+            "Which data type is used to store a single character?",
         options: [
             "int",
             "float",
@@ -99,7 +103,8 @@ const questionBank = [
     },
 
     {
-        question: "Which operator is used for assignment in C?",
+        question:
+            "Which operator is used for assignment in C?",
         options: [
             "==",
             "=",
@@ -110,7 +115,8 @@ const questionBank = [
     },
 
     {
-        question: "Which operator is used to compare two values for equality?",
+        question:
+            "Which operator is used to compare two values for equality?",
         options: [
             "=",
             "==",
@@ -121,7 +127,8 @@ const questionBank = [
     },
 
     {
-        question: "Which loop is guaranteed to execute at least once?",
+        question:
+            "Which loop is guaranteed to execute at least once?",
         options: [
             "for",
             "while",
@@ -132,7 +139,8 @@ const questionBank = [
     },
 
     {
-        question: "Which keyword is used to return a value from a function?",
+        question:
+            "Which keyword is used to return a value from a function?",
         options: [
             "break",
             "return",
@@ -143,7 +151,8 @@ const questionBank = [
     },
 
     {
-        question: "Which keyword is used to exit from a loop or switch statement?",
+        question:
+            "Which keyword is used to exit from a loop or switch statement?",
         options: [
             "stop",
             "exit",
@@ -154,7 +163,8 @@ const questionBank = [
     },
 
     {
-        question: "Which operator represents logical AND in C?",
+        question:
+            "Which operator represents logical AND in C?",
         options: [
             "&",
             "&&",
@@ -165,7 +175,8 @@ const questionBank = [
     },
 
     {
-        question: "Which operator represents logical OR in C?",
+        question:
+            "Which operator represents logical OR in C?",
         options: [
             "|",
             "&&",
@@ -176,7 +187,8 @@ const questionBank = [
     },
 
     {
-        question: "Which operator is used to find the remainder of a division?",
+        question:
+            "Which operator is used to find the remainder of a division?",
         options: [
             "/",
             "%",
@@ -187,7 +199,8 @@ const questionBank = [
     },
 
     {
-        question: "Array indexing in C starts from:",
+        question:
+            "Array indexing in C starts from:",
         options: [
             "0",
             "1",
@@ -198,18 +211,8 @@ const questionBank = [
     },
 
     {
-        question: "Which of the following is a valid single-line comment in C?",
-        options: [
-            "// comment",
-            "/* comment",
-            "# comment",
-            "<!-- comment -->"
-        ],
-        answer: "// comment"
-    },
-
-    {
-        question: "Which header file contains string handling functions?",
+        question:
+            "Which header file contains string handling functions?",
         options: [
             "stdio.h",
             "math.h",
@@ -220,7 +223,8 @@ const questionBank = [
     },
 
     {
-        question: "Which function is used to find the length of a string?",
+        question:
+            "Which function is used to find the length of a string?",
         options: [
             "strcpy()",
             "strlen()",
@@ -231,7 +235,8 @@ const questionBank = [
     },
 
     {
-        question: "Which function is used to copy one string into another?",
+        question:
+            "Which function is used to copy one string into another?",
         options: [
             "strlen()",
             "strcmp()",
@@ -242,7 +247,8 @@ const questionBank = [
     },
 
     {
-        question: "Which function is used to compare two strings?",
+        question:
+            "Which function is used to compare two strings?",
         options: [
             "strcmp()",
             "strcpy()",
@@ -253,7 +259,8 @@ const questionBank = [
     },
 
     {
-        question: "Which function is used to allocate memory dynamically?",
+        question:
+            "Which function is used to allocate memory dynamically?",
         options: [
             "malloc()",
             "printf()",
@@ -264,7 +271,8 @@ const questionBank = [
     },
 
     {
-        question: "Which keyword is used to define a constant variable?",
+        question:
+            "Which keyword is used to define a constant variable?",
         options: [
             "constant",
             "const",
@@ -275,7 +283,8 @@ const questionBank = [
     },
 
     {
-        question: "Which preprocessor directive is used to define a macro?",
+        question:
+            "Which preprocessor directive is used to define a macro?",
         options: [
             "#include",
             "#define",
@@ -286,7 +295,8 @@ const questionBank = [
     },
 
     {
-        question: "Which operator is used to access the address of a variable?",
+        question:
+            "Which operator is used to access the address of a variable?",
         options: [
             "*",
             "&",
@@ -297,7 +307,8 @@ const questionBank = [
     },
 
     {
-        question: "Which operator is used to access the value at an address?",
+        question:
+            "Which operator is used to access the value at an address?",
         options: [
             "&",
             "*",
@@ -308,7 +319,8 @@ const questionBank = [
     },
 
     {
-        question: "Which of the following is a valid C identifier?",
+        question:
+            "Which of the following is a valid C identifier?",
         options: [
             "2value",
             "my-value",
@@ -319,7 +331,8 @@ const questionBank = [
     },
 
     {
-        question: "Which storage class provides a variable with local scope and retains its value between function calls?",
+        question:
+            "Which storage class retains its value between function calls?",
         options: [
             "auto",
             "register",
@@ -330,7 +343,8 @@ const questionBank = [
     },
 
     {
-        question: "Which keyword is used to declare a structure in C?",
+        question:
+            "Which keyword is used to declare a structure in C?",
         options: [
             "record",
             "struct",
@@ -341,7 +355,8 @@ const questionBank = [
     },
 
     {
-        question: "Which statement is used for multi-way selection in C?",
+        question:
+            "Which statement is used for multi-way selection in C?",
         options: [
             "if",
             "for",
@@ -352,7 +367,8 @@ const questionBank = [
     },
 
     {
-        question: "Which keyword is used to skip the remaining statements of the current loop iteration?",
+        question:
+            "Which keyword skips the remaining statements of the current loop iteration?",
         options: [
             "break",
             "skip",
@@ -363,7 +379,8 @@ const questionBank = [
     },
 
     {
-        question: "What is the size of an int data type in C?",
+        question:
+            "What is the size of an int data type in C?",
         options: [
             "Always 2 bytes",
             "Always 4 bytes",
@@ -376,25 +393,20 @@ const questionBank = [
 ];
 
 
-// ================================
-// Random Questions
-// ================================
-function getRandomQuestions() {
+// ========================================
+// Select 5 Random Questions
+// ========================================
 
-    const shuffled =
-        [...questionBank].sort(
-            () => Math.random() - 0.5
-        );
-
-    return shuffled.slice(0, 5);
-}
-
-const questions = getRandomQuestions();
+const questions =
+    [...questionBank]
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 5);
 
 
-// ================================
-// Quiz Variables
-// ================================
+// ========================================
+// Variables
+// ========================================
+
 let currentQuestion = 0;
 let score = 0;
 let timeLeft = 60;
@@ -402,9 +414,10 @@ let selected = false;
 let quizFinished = false;
 
 
-// ================================
-// HTML Elements
-// ================================
+// ========================================
+// Elements
+// ========================================
+
 const questionElement =
     document.getElementById("question");
 
@@ -424,39 +437,30 @@ const timerElement =
     document.getElementById("timer");
 
 
-// ================================
+// ========================================
 // Total Questions
-// ================================
-if (totalQuestionsElement) {
+// ========================================
 
-    totalQuestionsElement.textContent =
-        questions.length;
-
-}
+totalQuestionsElement.textContent =
+    questions.length;
 
 
-// ================================
+// ========================================
 // Load Question
-// ================================
-function loadQuestion() {
+// ========================================
 
-    if (currentQuestion >= questions.length) {
-        return;
-    }
+function loadQuestion() {
 
     selected = false;
 
     const current =
         questions[currentQuestion];
 
-
     questionElement.textContent =
         current.question;
 
-
     questionNumberElement.textContent =
         currentQuestion + 1;
-
 
     optionsElement.innerHTML = "";
 
@@ -467,34 +471,34 @@ function loadQuestion() {
             const button =
                 document.createElement("button");
 
-
             button.textContent =
                 option;
 
-
             button.className =
-                "btn btn-outline-primary w-100 option-btn mb-2";
+                "btn btn-outline-primary w-100 mb-2";
 
 
-            button.addEventListener(
-                "click",
+            button.onclick =
                 function () {
 
-                    if (selected || quizFinished) {
+                    if (
+                        selected ||
+                        quizFinished
+                    ) {
                         return;
                     }
-
 
                     selected = true;
 
 
-                    const allButtons =
-                        optionsElement.querySelectorAll(
-                            "button"
-                        );
+                    const buttons =
+                        optionsElement
+                            .querySelectorAll(
+                                "button"
+                            );
 
 
-                    allButtons.forEach(
+                    buttons.forEach(
                         function (btn) {
                             btn.disabled = true;
                         }
@@ -508,11 +512,9 @@ function loadQuestion() {
 
                         score++;
 
-
                         button.classList.remove(
                             "btn-outline-primary"
                         );
-
 
                         button.classList.add(
                             "btn-success"
@@ -524,15 +526,13 @@ function loadQuestion() {
                             "btn-outline-primary"
                         );
 
-
                         button.classList.add(
                             "btn-danger"
                         );
 
                     }
 
-                }
-            );
+                };
 
 
             optionsElement.appendChild(
@@ -545,55 +545,51 @@ function loadQuestion() {
 }
 
 
-// ================================
-// Next Button
-// ================================
-if (nextBtn) {
+// ========================================
+// Next Question
+// ========================================
 
-    nextBtn.addEventListener(
-        "click",
-        function () {
+nextBtn.onclick =
+    function () {
 
-            if (quizFinished) {
-                return;
-            }
+        if (quizFinished) {
+            return;
+        }
 
 
-            if (!selected) {
+        if (!selected) {
 
-                alert(
-                    "Please select an answer."
-                );
+            alert(
+                "Please select an answer."
+            );
 
-                return;
-            }
-
-
-            currentQuestion++;
+            return;
+        }
 
 
-            if (
-                currentQuestion <
-                questions.length
-            ) {
+        currentQuestion++;
 
-                loadQuestion();
 
-            } else {
+        if (
+            currentQuestion <
+            questions.length
+        ) {
 
-                finishQuiz();
+            loadQuestion();
 
-            }
+        } else {
+
+            finishQuiz();
 
         }
-    );
 
-}
+    };
 
 
-// ================================
+// ========================================
 // Timer
-// ================================
+// ========================================
+
 const timerInterval =
     setInterval(
         function () {
@@ -608,13 +604,8 @@ const timerInterval =
 
             timeLeft--;
 
-
-            if (timerElement) {
-
-                timerElement.textContent =
-                    timeLeft;
-
-            }
+            timerElement.textContent =
+                timeLeft;
 
 
             if (timeLeft <= 0) {
@@ -632,9 +623,10 @@ const timerInterval =
     );
 
 
-// ================================
+// ========================================
 // Finish Quiz
-// ================================
+// ========================================
+
 async function finishQuiz() {
 
     if (quizFinished) {
@@ -650,25 +642,30 @@ async function finishQuiz() {
 
     const percentage =
         Math.round(
-            (score / questions.length) *
-            100
+            (score / questions.length) * 100
         );
 
 
     const result = {
 
-        name: studentData.name,
+        name:
+            studentData.name,
 
-        branch: studentData.branch,
+        branch:
+            studentData.branch,
 
         subject:
-            studentData.subject || "C Programming",
+            studentData.subject ||
+            "C Programming",
 
-        score: score,
+        score:
+            score,
 
-        total: questions.length,
+        total:
+            questions.length,
 
-        percentage: percentage,
+        percentage:
+            percentage,
 
         date:
             new Date().toISOString()
@@ -676,18 +673,14 @@ async function finishQuiz() {
     };
 
 
-    // ================================
-    // Save Latest Result Locally
-    // ================================
+    // Save locally
+
     localStorage.setItem(
         "quizResult",
         JSON.stringify(result)
     );
 
 
-    // ================================
-    // Save History Locally
-    // ================================
     let history =
         JSON.parse(
             localStorage.getItem(
@@ -705,9 +698,8 @@ async function finishQuiz() {
     );
 
 
-    // ================================
-    // Save Result to Supabase
-    // ================================
+    // Save to Supabase
+
     try {
 
         const { error } =
@@ -747,7 +739,7 @@ async function finishQuiz() {
             );
 
             alert(
-                "Result online save થયું નથી:\n\n" +
+                "Online save error:\n\n" +
                 error.message
             );
 
@@ -756,36 +748,30 @@ async function finishQuiz() {
     } catch (error) {
 
         console.error(
-            "Supabase Connection Error:",
+            "Connection Error:",
             error
-        );
-
-        alert(
-            "Supabase connection error:\n\n" +
-            error.message
         );
 
     }
 
 
-    // ================================
-    // Result Page
-    // ================================
     window.location.href =
         "result.html";
 
 }
 
 
-// ================================
+// ========================================
 // Start Quiz
-// ================================
+// ========================================
+
 loadQuestion();
 
 
-// ================================
+// ========================================
 // Logout
-// ================================
+// ========================================
+
 function logout() {
 
     localStorage.removeItem(
@@ -796,8 +782,6 @@ function logout() {
         "studentData"
     );
 
-
     window.location.href =
         "index.html";
-
-}
+                        }
