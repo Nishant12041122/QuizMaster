@@ -15,42 +15,29 @@
         rel="stylesheet">
 
     <link rel="stylesheet"
-          href="style2.css">
+          href="css/style2.css">
 
 </head>
 
 <body>
+    
+    <div class="d-flex justify-content-between align-items-center mb-3">
 
-<div class="container py-4">
+    <div>
+        <h3 class="text-primary fw-bold mb-1">
+            QuizMaster
+        </h3>
 
-    <!-- Header -->
-
-    <div class="d-flex justify-content-between align-items-center mb-4">
-
-        <div>
-
-            <h3 class="text-primary fw-bold mb-1">
-                QuizMaster
-            </h3>
-
-            <p id="studentInfo"
-               class="text-muted mb-0">
-            </p>
-
-        </div>
-
-        <button
-            onclick="logout()"
-            class="btn btn-outline-danger">
-
-            Logout
-
-        </button>
-
+        <p id="studentInfo" class="text-muted mb-0"></p>
     </div>
 
+    <button onclick="logout()" class="btn btn-outline-danger">
+        Logout
+    </button>
 
-    <!-- Quiz Card -->
+</div>
+
+<div class="container py-5">
 
     <div class="card shadow-lg border-0 p-4 mx-auto"
          style="max-width: 700px;">
@@ -62,6 +49,10 @@
                 <h3 class="text-primary fw-bold">
                     QuizMaster
                 </h3>
+
+                <p id="studentInfo"
+                   class="text-muted">
+                </p>
 
             </div>
 
@@ -80,43 +71,23 @@
 
         <hr>
 
-
-        <!-- Question Number -->
-
         <p class="text-muted">
 
             Question
-
-            <span id="questionNumber">
-                1
-            </span>
-
+            <span id="questionNumber">1</span>
             of
-
-            <span id="totalQuestions">
-                5
-            </span>
+            <span id="totalQuestions">5</span>
 
         </p>
-
-
-        <!-- Question -->
 
         <h4 id="question"
             class="fw-bold mb-4">
         </h4>
 
-
-        <!-- Options -->
-
         <div id="options"></div>
 
-
-        <!-- Next -->
-
-        <button
-            id="nextBtn"
-            class="btn btn-primary w-100 mt-3">
+        <button id="nextBtn"
+                class="btn btn-primary w-100 mt-3">
 
             Next Question
 
@@ -125,12 +96,8 @@
     </div>
 
 </div>
-
-
-<!-- Quiz JavaScript -->
-
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="quiz.js"></script>
 
 </body>
-
 </html>
