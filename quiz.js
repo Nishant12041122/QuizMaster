@@ -1,5 +1,5 @@
 // ========================================
-// Supabase
+// Supabase Connection
 // ========================================
 
 const SUPABASE_URL =
@@ -29,358 +29,205 @@ if (!studentData) {
 
 
 // ========================================
-// Student Info
+// Student Information
 // ========================================
 
-document.getElementById("studentInfo").textContent =
-    studentData.name + " • " + studentData.branch;
+const studentInfo =
+    document.getElementById("studentInfo");
+
+if (studentInfo) {
+    studentInfo.textContent =
+        studentData.name + " • " + studentData.branch;
+}
 
 
 // ========================================
-// Questions
+// Question Bank
 // ========================================
 
 const questionBank = [
 
     {
-        question:
-            "Which of the following is the correct way to declare an integer variable in C?",
-        options: [
-            "integer x;",
-            "int x;",
-            "x int;",
-            "declare int x;"
-        ],
+        question: "Which of the following is the correct way to declare an integer variable in C?",
+        options: ["integer x;", "int x;", "x int;", "declare int x;"],
         answer: "int x;"
     },
 
     {
-        question:
-            "Which function is the entry point of a C program?",
-        options: [
-            "start()",
-            "main()",
-            "begin()",
-            "run()"
-        ],
+        question: "Which function is the entry point of a C program?",
+        options: ["start()", "main()", "begin()", "run()"],
         answer: "main()"
     },
 
     {
-        question:
-            "Which header file is required for printf() and scanf()?",
-        options: [
-            "conio.h",
-            "stdio.h",
-            "stdlib.h",
-            "string.h"
-        ],
+        question: "Which header file is required for printf() and scanf()?",
+        options: ["conio.h", "stdio.h", "stdlib.h", "string.h"],
         answer: "stdio.h"
     },
 
     {
-        question:
-            "Which symbol is used to terminate a statement in C?",
-        options: [
-            ":",
-            ".",
-            ",",
-            ";"
-        ],
+        question: "Which symbol is used to terminate a statement in C?",
+        options: [":", ".", ",", ";"],
         answer: ";"
     },
 
     {
-        question:
-            "Which data type is used to store a single character?",
-        options: [
-            "int",
-            "float",
-            "char",
-            "double"
-        ],
+        question: "Which data type is used to store a single character?",
+        options: ["int", "float", "char", "double"],
         answer: "char"
     },
 
     {
-        question:
-            "Which operator is used for assignment in C?",
-        options: [
-            "==",
-            "=",
-            "!=",
-            "+="
-        ],
+        question: "Which operator is used for assignment in C?",
+        options: ["==", "=", "!=", "+="],
         answer: "="
     },
 
     {
-        question:
-            "Which operator is used to compare two values for equality?",
-        options: [
-            "=",
-            "==",
-            "=>",
-            "!="
-        ],
+        question: "Which operator is used to compare two values for equality?",
+        options: ["=", "==", "=>", "!="],
         answer: "=="
     },
 
     {
-        question:
-            "Which loop is guaranteed to execute at least once?",
-        options: [
-            "for",
-            "while",
-            "do-while",
-            "nested for"
-        ],
+        question: "Which loop is guaranteed to execute at least once?",
+        options: ["for", "while", "do-while", "nested for"],
         answer: "do-while"
     },
 
     {
-        question:
-            "Which keyword is used to return a value from a function?",
-        options: [
-            "break",
-            "return",
-            "continue",
-            "exit"
-        ],
+        question: "Which keyword is used to return a value from a function?",
+        options: ["break", "return", "continue", "exit"],
         answer: "return"
     },
 
     {
-        question:
-            "Which keyword is used to exit from a loop or switch statement?",
-        options: [
-            "stop",
-            "exit",
-            "break",
-            "return"
-        ],
+        question: "Which keyword is used to exit from a loop or switch statement?",
+        options: ["stop", "exit", "break", "return"],
         answer: "break"
     },
 
     {
-        question:
-            "Which operator represents logical AND in C?",
-        options: [
-            "&",
-            "&&",
-            "||",
-            "!"
-        ],
+        question: "Which operator represents logical AND in C?",
+        options: ["&", "&&", "||", "!"],
         answer: "&&"
     },
 
     {
-        question:
-            "Which operator represents logical OR in C?",
-        options: [
-            "|",
-            "&&",
-            "||",
-            "!"
-        ],
+        question: "Which operator represents logical OR in C?",
+        options: ["|", "&&", "||", "!"],
         answer: "||"
     },
 
     {
-        question:
-            "Which operator is used to find the remainder of a division?",
-        options: [
-            "/",
-            "%",
-            "//",
-            "\\"
-        ],
+        question: "Which operator is used to find the remainder of a division?",
+        options: ["/", "%", "//", "\\"],
         answer: "%"
     },
 
     {
-        question:
-            "Array indexing in C starts from:",
-        options: [
-            "0",
-            "1",
-            "-1",
-            "Depends on array"
-        ],
+        question: "Array indexing in C starts from:",
+        options: ["0", "1", "-1", "Depends on array"],
         answer: "0"
     },
 
     {
-        question:
-            "Which header file contains string handling functions?",
+        question: "Which of the following is a valid single-line comment in C?",
         options: [
-            "stdio.h",
-            "math.h",
-            "string.h",
-            "ctype.h"
+            "// comment",
+            "/* comment",
+            "# comment",
+            "<!-- comment -->"
         ],
+        answer: "// comment"
+    },
+
+    {
+        question: "Which header file contains string handling functions?",
+        options: ["stdio.h", "math.h", "string.h", "ctype.h"],
         answer: "string.h"
     },
 
     {
-        question:
-            "Which function is used to find the length of a string?",
-        options: [
-            "strcpy()",
-            "strlen()",
-            "strcmp()",
-            "strcat()"
-        ],
+        question: "Which function is used to find the length of a string?",
+        options: ["strcpy()", "strlen()", "strcmp()", "strcat()"],
         answer: "strlen()"
     },
 
     {
-        question:
-            "Which function is used to copy one string into another?",
-        options: [
-            "strlen()",
-            "strcmp()",
-            "strcpy()",
-            "strcat()"
-        ],
+        question: "Which function is used to copy one string into another?",
+        options: ["strlen()", "strcmp()", "strcpy()", "strcat()"],
         answer: "strcpy()"
     },
 
     {
-        question:
-            "Which function is used to compare two strings?",
-        options: [
-            "strcmp()",
-            "strcpy()",
-            "strlen()",
-            "strcat()"
-        ],
+        question: "Which function is used to compare two strings?",
+        options: ["strcmp()", "strcpy()", "strlen()", "strcat()"],
         answer: "strcmp()"
     },
 
     {
-        question:
-            "Which function is used to allocate memory dynamically?",
-        options: [
-            "malloc()",
-            "printf()",
-            "scanf()",
-            "sizeof()"
-        ],
+        question: "Which function is used to allocate memory dynamically?",
+        options: ["malloc()", "printf()", "scanf()", "sizeof()"],
         answer: "malloc()"
     },
 
     {
-        question:
-            "Which keyword is used to define a constant variable?",
-        options: [
-            "constant",
-            "const",
-            "define",
-            "fixed"
-        ],
+        question: "Which keyword is used to define a constant variable?",
+        options: ["constant", "const", "define", "fixed"],
         answer: "const"
     },
 
     {
-        question:
-            "Which preprocessor directive is used to define a macro?",
-        options: [
-            "#include",
-            "#define",
-            "#macro",
-            "#const"
-        ],
+        question: "Which preprocessor directive is used to define a macro?",
+        options: ["#include", "#define", "#macro", "#const"],
         answer: "#define"
     },
 
     {
-        question:
-            "Which operator is used to access the address of a variable?",
-        options: [
-            "*",
-            "&",
-            "@",
-            "#"
-        ],
+        question: "Which operator is used to access the address of a variable?",
+        options: ["*", "&", "@", "#"],
         answer: "&"
     },
 
     {
-        question:
-            "Which operator is used to access the value at an address?",
-        options: [
-            "&",
-            "*",
-            "%",
-            "#"
-        ],
+        question: "Which operator is used to access the value at an address?",
+        options: ["&", "*", "%", "#"],
         answer: "*"
     },
 
     {
-        question:
-            "Which of the following is a valid C identifier?",
-        options: [
-            "2value",
-            "my-value",
-            "my_value",
-            "float"
-        ],
+        question: "Which of the following is a valid C identifier?",
+        options: ["2value", "my-value", "my_value", "float"],
         answer: "my_value"
     },
 
     {
-        question:
-            "Which storage class retains its value between function calls?",
-        options: [
-            "auto",
-            "register",
-            "static",
-            "extern"
-        ],
+        question: "Which storage class provides a variable with local scope and retains its value between function calls?",
+        options: ["auto", "register", "static", "extern"],
         answer: "static"
     },
 
     {
-        question:
-            "Which keyword is used to declare a structure in C?",
-        options: [
-            "record",
-            "struct",
-            "structure",
-            "class"
-        ],
+        question: "Which keyword is used to declare a structure in C?",
+        options: ["record", "struct", "structure", "class"],
         answer: "struct"
     },
 
     {
-        question:
-            "Which statement is used for multi-way selection in C?",
-        options: [
-            "if",
-            "for",
-            "switch",
-            "while"
-        ],
+        question: "Which statement is used for multi-way selection in C?",
+        options: ["if", "for", "switch", "while"],
         answer: "switch"
     },
 
     {
-        question:
-            "Which keyword skips the remaining statements of the current loop iteration?",
-        options: [
-            "break",
-            "skip",
-            "continue",
-            "pass"
-        ],
+        question: "Which keyword is used to skip the remaining statements of the current loop iteration?",
+        options: ["break", "skip", "continue", "pass"],
         answer: "continue"
     },
 
     {
-        question:
-            "What is the size of an int data type in C?",
+        question: "What is the size of an int data type in C?",
         options: [
             "Always 2 bytes",
             "Always 4 bytes",
@@ -394,17 +241,25 @@ const questionBank = [
 
 
 // ========================================
-// Select 5 Random Questions
+// Random Questions
 // ========================================
+
+function getRandomQuestions() {
+
+    const shuffled =
+        [...questionBank].sort(
+            () => Math.random() - 0.5
+        );
+
+    return shuffled.slice(0, 5);
+}
 
 const questions =
-    [...questionBank]
-        .sort(() => Math.random() - 0.5)
-        .slice(0, 5);
+    getRandomQuestions();
 
 
 // ========================================
-// Variables
+// Quiz Variables
 // ========================================
 
 let currentQuestion = 0;
@@ -415,7 +270,7 @@ let quizFinished = false;
 
 
 // ========================================
-// Elements
+// HTML Elements
 // ========================================
 
 const questionElement =
@@ -475,10 +330,11 @@ function loadQuestion() {
                 option;
 
             button.className =
-                "btn btn-outline-primary w-100 mb-2";
+                "btn btn-outline-primary w-100 option-btn mb-2";
 
 
-            button.onclick =
+            button.addEventListener(
+                "click",
                 function () {
 
                     if (
@@ -491,14 +347,12 @@ function loadQuestion() {
                     selected = true;
 
 
-                    const buttons =
+                    const allButtons =
                         optionsElement
-                            .querySelectorAll(
-                                "button"
-                            );
+                            .querySelectorAll("button");
 
 
-                    buttons.forEach(
+                    allButtons.forEach(
                         function (btn) {
                             btn.disabled = true;
                         }
@@ -532,7 +386,8 @@ function loadQuestion() {
 
                     }
 
-                };
+                }
+            );
 
 
             optionsElement.appendChild(
@@ -546,10 +401,11 @@ function loadQuestion() {
 
 
 // ========================================
-// Next Question
+// Next Button
 // ========================================
 
-nextBtn.onclick =
+nextBtn.addEventListener(
+    "click",
     function () {
 
         if (quizFinished) {
@@ -583,7 +439,8 @@ nextBtn.onclick =
 
         }
 
-    };
+    }
+);
 
 
 // ========================================
@@ -673,7 +530,9 @@ async function finishQuiz() {
     };
 
 
-    // Save locally
+    // ====================================
+    // Save Locally
+    // ====================================
 
     localStorage.setItem(
         "quizResult",
@@ -698,7 +557,9 @@ async function finishQuiz() {
     );
 
 
+    // ====================================
     // Save to Supabase
+    // ====================================
 
     try {
 
@@ -734,13 +595,19 @@ async function finishQuiz() {
         if (error) {
 
             console.error(
-                "Supabase Error:",
+                "Supabase INSERT ERROR:",
                 error
             );
 
             alert(
-                "Online save error:\n\n" +
+                "Quiz completed, but Supabase save failed:\n\n" +
                 error.message
+            );
+
+        } else {
+
+            console.log(
+                "Quiz result saved to Supabase successfully."
             );
 
         }
@@ -748,12 +615,21 @@ async function finishQuiz() {
     } catch (error) {
 
         console.error(
-            "Connection Error:",
+            "Supabase CONNECTION ERROR:",
             error
+        );
+
+        alert(
+            "Supabase connection error:\n\n" +
+            error.message
         );
 
     }
 
+
+    // ====================================
+    // Open Result Page
+    // ====================================
 
     window.location.href =
         "result.html";
@@ -784,4 +660,5 @@ function logout() {
 
     window.location.href =
         "index.html";
-                        }
+
+}
