@@ -1,15 +1,17 @@
 // ================================
-// Supabase connection
+// Supabase Connection
 // ================================
-const SUPABASE_URL = "https://osjkvgvcmckfhgaduqhs.supabase.co";
+const SUPABASE_URL =
+    "https://osjkvgvcmckfhgaduqhs.supabase.co";
 
 const SUPABASE_PUBLISHABLE_KEY =
     "sb_publishable_yV6A7fUZkAocBB48cDHdCg_tdgt3Z4F";
 
-const supabaseClient = window.supabase.createClient(
-    SUPABASE_URL,
-    SUPABASE_PUBLISHABLE_KEY
-);
+const supabaseClient =
+    window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_PUBLISHABLE_KEY
+    );
 
 
 // ================================
@@ -20,17 +22,20 @@ const studentData = JSON.parse(
 );
 
 if (!studentData) {
-
     window.location.href = "index.html";
-
 }
 
 
 // ================================
 // Student Information
 // ================================
-document.getElementById("studentInfo").textContent =
-    studentData.name + " • " + studentData.branch;
+const studentInfo =
+    document.getElementById("studentInfo");
+
+if (studentInfo) {
+    studentInfo.textContent =
+        studentData.name + " • " + studentData.branch;
+}
 
 
 // ================================
@@ -40,85 +45,155 @@ const questionBank = [
 
     {
         question: "Which of the following is the correct way to declare an integer variable in C?",
-        options: ["integer x;", "int x;", "x int;", "declare int x;"],
+        options: [
+            "integer x;",
+            "int x;",
+            "x int;",
+            "declare int x;"
+        ],
         answer: "int x;"
     },
 
     {
         question: "Which function is the entry point of a C program?",
-        options: ["start()", "main()", "begin()", "run()"],
+        options: [
+            "start()",
+            "main()",
+            "begin()",
+            "run()"
+        ],
         answer: "main()"
     },
 
     {
         question: "Which header file is required for printf() and scanf()?",
-        options: ["conio.h", "stdio.h", "stdlib.h", "string.h"],
+        options: [
+            "conio.h",
+            "stdio.h",
+            "stdlib.h",
+            "string.h"
+        ],
         answer: "stdio.h"
     },
 
     {
         question: "Which symbol is used to terminate a statement in C?",
-        options: [":", ".", ",", ";"],
+        options: [
+            ":",
+            ".",
+            ",",
+            ";"
+        ],
         answer: ";"
     },
 
     {
         question: "Which data type is used to store a single character?",
-        options: ["int", "float", "char", "double"],
+        options: [
+            "int",
+            "float",
+            "char",
+            "double"
+        ],
         answer: "char"
     },
 
     {
         question: "Which operator is used for assignment in C?",
-        options: ["==", "=", "!=", "+="],
+        options: [
+            "==",
+            "=",
+            "!=",
+            "+="
+        ],
         answer: "="
     },
 
     {
         question: "Which operator is used to compare two values for equality?",
-        options: ["=", "==", "=>", "!="],
+        options: [
+            "=",
+            "==",
+            "=>",
+            "!="
+        ],
         answer: "=="
     },
 
     {
         question: "Which loop is guaranteed to execute at least once?",
-        options: ["for", "while", "do-while", "nested for"],
+        options: [
+            "for",
+            "while",
+            "do-while",
+            "nested for"
+        ],
         answer: "do-while"
     },
 
     {
         question: "Which keyword is used to return a value from a function?",
-        options: ["break", "return", "continue", "exit"],
+        options: [
+            "break",
+            "return",
+            "continue",
+            "exit"
+        ],
         answer: "return"
     },
 
     {
         question: "Which keyword is used to exit from a loop or switch statement?",
-        options: ["stop", "exit", "break", "return"],
+        options: [
+            "stop",
+            "exit",
+            "break",
+            "return"
+        ],
         answer: "break"
     },
 
     {
         question: "Which operator represents logical AND in C?",
-        options: ["&", "&&", "||", "!"],
+        options: [
+            "&",
+            "&&",
+            "||",
+            "!"
+        ],
         answer: "&&"
     },
 
     {
         question: "Which operator represents logical OR in C?",
-        options: ["|", "&&", "||", "!"],
+        options: [
+            "|",
+            "&&",
+            "||",
+            "!"
+        ],
         answer: "||"
     },
 
     {
         question: "Which operator is used to find the remainder of a division?",
-        options: ["/", "%", "//", "\\"],
+        options: [
+            "/",
+            "%",
+            "//",
+            "\\"
+        ],
         answer: "%"
     },
 
     {
         question: "Array indexing in C starts from:",
-        options: ["0", "1", "-1", "Depends on array"],
+        options: [
+            "0",
+            "1",
+            "-1",
+            "Depends on array"
+        ],
         answer: "0"
     },
 
@@ -135,85 +210,155 @@ const questionBank = [
 
     {
         question: "Which header file contains string handling functions?",
-        options: ["stdio.h", "math.h", "string.h", "ctype.h"],
+        options: [
+            "stdio.h",
+            "math.h",
+            "string.h",
+            "ctype.h"
+        ],
         answer: "string.h"
     },
 
     {
         question: "Which function is used to find the length of a string?",
-        options: ["strcpy()", "strlen()", "strcmp()", "strcat()"],
+        options: [
+            "strcpy()",
+            "strlen()",
+            "strcmp()",
+            "strcat()"
+        ],
         answer: "strlen()"
     },
 
     {
         question: "Which function is used to copy one string into another?",
-        options: ["strlen()", "strcmp()", "strcpy()", "strcat()"],
+        options: [
+            "strlen()",
+            "strcmp()",
+            "strcpy()",
+            "strcat()"
+        ],
         answer: "strcpy()"
     },
 
     {
         question: "Which function is used to compare two strings?",
-        options: ["strcmp()", "strcpy()", "strlen()", "strcat()"],
+        options: [
+            "strcmp()",
+            "strcpy()",
+            "strlen()",
+            "strcat()"
+        ],
         answer: "strcmp()"
     },
 
     {
         question: "Which function is used to allocate memory dynamically?",
-        options: ["malloc()", "printf()", "scanf()", "sizeof()"],
+        options: [
+            "malloc()",
+            "printf()",
+            "scanf()",
+            "sizeof()"
+        ],
         answer: "malloc()"
     },
 
     {
         question: "Which keyword is used to define a constant variable?",
-        options: ["constant", "const", "define", "fixed"],
+        options: [
+            "constant",
+            "const",
+            "define",
+            "fixed"
+        ],
         answer: "const"
     },
 
     {
         question: "Which preprocessor directive is used to define a macro?",
-        options: ["#include", "#define", "#macro", "#const"],
+        options: [
+            "#include",
+            "#define",
+            "#macro",
+            "#const"
+        ],
         answer: "#define"
     },
 
     {
         question: "Which operator is used to access the address of a variable?",
-        options: ["*", "&", "@", "#"],
+        options: [
+            "*",
+            "&",
+            "@",
+            "#"
+        ],
         answer: "&"
     },
 
     {
         question: "Which operator is used to access the value at an address?",
-        options: ["&", "*", "%", "#"],
+        options: [
+            "&",
+            "*",
+            "%",
+            "#"
+        ],
         answer: "*"
     },
 
     {
         question: "Which of the following is a valid C identifier?",
-        options: ["2value", "my-value", "my_value", "float"],
+        options: [
+            "2value",
+            "my-value",
+            "my_value",
+            "float"
+        ],
         answer: "my_value"
     },
 
     {
         question: "Which storage class provides a variable with local scope and retains its value between function calls?",
-        options: ["auto", "register", "static", "extern"],
+        options: [
+            "auto",
+            "register",
+            "static",
+            "extern"
+        ],
         answer: "static"
     },
 
     {
         question: "Which keyword is used to declare a structure in C?",
-        options: ["record", "struct", "structure", "class"],
+        options: [
+            "record",
+            "struct",
+            "structure",
+            "class"
+        ],
         answer: "struct"
     },
 
     {
         question: "Which statement is used for multi-way selection in C?",
-        options: ["if", "for", "switch", "while"],
+        options: [
+            "if",
+            "for",
+            "switch",
+            "while"
+        ],
         answer: "switch"
     },
 
     {
         question: "Which keyword is used to skip the remaining statements of the current loop iteration?",
-        options: ["break", "skip", "continue", "pass"],
+        options: [
+            "break",
+            "skip",
+            "continue",
+            "pass"
+        ],
         answer: "continue"
     },
 
@@ -236,8 +381,10 @@ const questionBank = [
 // ================================
 function getRandomQuestions() {
 
-    const shuffled = [...questionBank]
-        .sort(() => Math.random() - 0.5);
+    const shuffled =
+        [...questionBank].sort(
+            () => Math.random() - 0.5
+        );
 
     return shuffled.slice(0, 5);
 }
@@ -252,6 +399,7 @@ let currentQuestion = 0;
 let score = 0;
 let timeLeft = 60;
 let selected = false;
+let quizFinished = false;
 
 
 // ================================
@@ -276,8 +424,15 @@ const timerElement =
     document.getElementById("timer");
 
 
-totalQuestionsElement.textContent =
-    questions.length;
+// ================================
+// Total Questions
+// ================================
+if (totalQuestionsElement) {
+
+    totalQuestionsElement.textContent =
+        questions.length;
+
+}
 
 
 // ================================
@@ -285,79 +440,107 @@ totalQuestionsElement.textContent =
 // ================================
 function loadQuestion() {
 
+    if (currentQuestion >= questions.length) {
+        return;
+    }
+
     selected = false;
 
-    const current = questions[currentQuestion];
+    const current =
+        questions[currentQuestion];
+
 
     questionElement.textContent =
         current.question;
 
+
     questionNumberElement.textContent =
         currentQuestion + 1;
+
 
     optionsElement.innerHTML = "";
 
 
-    current.options.forEach(function (option) {
+    current.options.forEach(
+        function (option) {
 
-        const button =
-            document.createElement("button");
-
-        button.textContent = option;
-
-        button.className =
-            "btn btn-outline-primary w-100 option-btn";
+            const button =
+                document.createElement("button");
 
 
-        button.addEventListener("click", function () {
-
-            if (selected) {
-                return;
-            }
-
-            selected = true;
+            button.textContent =
+                option;
 
 
-            const allButtons =
-                optionsElement.querySelectorAll("button");
-
-            allButtons.forEach(function (btn) {
-
-                btn.disabled = true;
-
-            });
+            button.className =
+                "btn btn-outline-primary w-100 option-btn mb-2";
 
 
-            if (option === current.answer) {
+            button.addEventListener(
+                "click",
+                function () {
 
-                score++;
-
-                button.classList.remove(
-                    "btn-outline-primary"
-                );
-
-                button.classList.add(
-                    "btn-success"
-                );
-
-            } else {
-
-                button.classList.remove(
-                    "btn-outline-primary"
-                );
-
-                button.classList.add(
-                    "btn-danger"
-                );
-
-            }
-
-        });
+                    if (selected || quizFinished) {
+                        return;
+                    }
 
 
-        optionsElement.appendChild(button);
+                    selected = true;
 
-    });
+
+                    const allButtons =
+                        optionsElement.querySelectorAll(
+                            "button"
+                        );
+
+
+                    allButtons.forEach(
+                        function (btn) {
+                            btn.disabled = true;
+                        }
+                    );
+
+
+                    if (
+                        option ===
+                        current.answer
+                    ) {
+
+                        score++;
+
+
+                        button.classList.remove(
+                            "btn-outline-primary"
+                        );
+
+
+                        button.classList.add(
+                            "btn-success"
+                        );
+
+                    } else {
+
+                        button.classList.remove(
+                            "btn-outline-primary"
+                        );
+
+
+                        button.classList.add(
+                            "btn-danger"
+                        );
+
+                    }
+
+                }
+            );
+
+
+            optionsElement.appendChild(
+                button
+            );
+
+        }
+    );
 
 }
 
@@ -365,52 +548,88 @@ function loadQuestion() {
 // ================================
 // Next Button
 // ================================
-nextBtn.addEventListener("click", function () {
+if (nextBtn) {
 
-    if (!selected) {
+    nextBtn.addEventListener(
+        "click",
+        function () {
 
-        alert("Please select an answer.");
-
-        return;
-    }
-
-
-    currentQuestion++;
+            if (quizFinished) {
+                return;
+            }
 
 
-    if (currentQuestion < questions.length) {
+            if (!selected) {
 
-        loadQuestion();
+                alert(
+                    "Please select an answer."
+                );
 
-    } else {
+                return;
+            }
 
-        finishQuiz();
 
-    }
+            currentQuestion++;
 
-});
+
+            if (
+                currentQuestion <
+                questions.length
+            ) {
+
+                loadQuestion();
+
+            } else {
+
+                finishQuiz();
+
+            }
+
+        }
+    );
+
+}
 
 
 // ================================
 // Timer
 // ================================
-const timerInterval = setInterval(function () {
+const timerInterval =
+    setInterval(
+        function () {
 
-    timeLeft--;
+            if (quizFinished) {
+                clearInterval(
+                    timerInterval
+                );
+                return;
+            }
 
-    timerElement.textContent =
-        timeLeft;
+
+            timeLeft--;
 
 
-    if (timeLeft <= 0) {
+            if (timerElement) {
 
-        clearInterval(timerInterval);
+                timerElement.textContent =
+                    timeLeft;
 
-        finishQuiz();
+            }
 
-    }
 
-}, 1000);
+            if (timeLeft <= 0) {
+
+                clearInterval(
+                    timerInterval
+                );
+
+                finishQuiz();
+
+            }
+
+        },
+        1000
+    );
 
 
 // ================================
@@ -418,12 +637,21 @@ const timerInterval = setInterval(function () {
 // ================================
 async function finishQuiz() {
 
-    clearInterval(timerInterval);
+    if (quizFinished) {
+        return;
+    }
+
+    quizFinished = true;
+
+    clearInterval(
+        timerInterval
+    );
 
 
     const percentage =
         Math.round(
-            (score / questions.length) * 100
+            (score / questions.length) *
+            100
         );
 
 
@@ -433,7 +661,8 @@ async function finishQuiz() {
 
         branch: studentData.branch,
 
-        subject: studentData.subject,
+        subject:
+            studentData.subject || "C Programming",
 
         score: score,
 
@@ -441,7 +670,8 @@ async function finishQuiz() {
 
         percentage: percentage,
 
-        date: new Date().toISOString()
+        date:
+            new Date().toISOString()
 
     };
 
@@ -460,7 +690,9 @@ async function finishQuiz() {
     // ================================
     let history =
         JSON.parse(
-            localStorage.getItem("quizHistory")
+            localStorage.getItem(
+                "quizHistory"
+            )
         ) || [];
 
 
@@ -476,39 +708,60 @@ async function finishQuiz() {
     // ================================
     // Save Result to Supabase
     // ================================
-    const { error } = await supabaseClient
-        .from("quiz_results")
-        .insert([{
+    try {
 
-            name: result.name,
+        const { error } =
+            await supabaseClient
+                .from("quiz_results")
+                .insert([
+                    {
+                        name:
+                            result.name,
 
-            branch: result.branch,
+                        branch:
+                            result.branch,
 
-            subject: result.subject,
+                        subject:
+                            result.subject,
 
-            score: result.score,
+                        score:
+                            result.score,
 
-            total: result.total,
+                        total:
+                            result.total,
 
-            percentage: result.percentage,
+                        percentage:
+                            result.percentage,
 
-            date: result.date
+                        date:
+                            result.date
+                    }
+                ]);
 
-        }]);
 
+        if (error) {
 
-    // ================================
-    // Supabase Error
-    // ================================
-    if (error) {
+            console.error(
+                "Supabase Error:",
+                error
+            );
+
+            alert(
+                "Result online save થયું નથી:\n\n" +
+                error.message
+            );
+
+        }
+
+    } catch (error) {
 
         console.error(
-            "Supabase save failed:",
+            "Supabase Connection Error:",
             error
         );
 
         alert(
-            "Quiz completed, but the result could not be saved to the online database.\n\n" +
+            "Supabase connection error:\n\n" +
             error.message
         );
 
@@ -516,7 +769,7 @@ async function finishQuiz() {
 
 
     // ================================
-    // Open Result Page
+    // Result Page
     // ================================
     window.location.href =
         "result.html";
@@ -525,7 +778,7 @@ async function finishQuiz() {
 
 
 // ================================
-// Start First Question
+// Start Quiz
 // ================================
 loadQuestion();
 
@@ -543,336 +796,8 @@ function logout() {
         "studentData"
     );
 
+
     window.location.href =
         "index.html";
-}        question: "Which header file contains string handling functions?",
-        options: ["stdio.h", "math.h", "string.h", "ctype.h"],
-        answer: "string.h"
-    },
 
-    {
-        question: "Which function is used to find the length of a string?",
-        options: ["strcpy()", "strlen()", "strcmp()", "strcat()"],
-        answer: "strlen()"
-    },
-
-    {
-        question: "Which function is used to copy one string into another?",
-        options: ["strlen()", "strcmp()", "strcpy()", "strcat()"],
-        answer: "strcpy()"
-    },
-
-    {
-        question: "Which function is used to compare two strings?",
-        options: ["strcmp()", "strcpy()", "strlen()", "strcat()"],
-        answer: "strcmp()"
-    },
-
-    {
-        question: "Which function is used to allocate memory dynamically?",
-        options: ["malloc()", "printf()", "scanf()", "sizeof()"],
-        answer: "malloc()"
-    },
-
-    {
-        question: "Which keyword is used to define a constant variable?",
-        options: ["constant", "const", "define", "fixed"],
-        answer: "const"
-    },
-
-    {
-        question: "Which preprocessor directive is used to define a macro?",
-        options: ["#include", "#define", "#macro", "#const"],
-        answer: "#define"
-    },
-
-    {
-        question: "Which operator is used to access the address of a variable?",
-        options: ["*", "&", "@", "#"],
-        answer: "&"
-    },
-
-    {
-        question: "Which operator is used to access the value at an address?",
-        options: ["&", "*", "%", "#"],
-        answer: "*"
-    },
-
-    {
-        question: "Which of the following is a valid C identifier?",
-        options: ["2value", "my-value", "my_value", "float"],
-        answer: "my_value"
-    },
-
-    {
-        question: "Which storage class provides a variable with local scope and retains its value between function calls?",
-        options: ["auto", "register", "static", "extern"],
-        answer: "static"
-    },
-
-    {
-        question: "Which keyword is used to declare a structure in C?",
-        options: ["record", "struct", "structure", "class"],
-        answer: "struct"
-    },
-
-    {
-        question: "Which statement is used for multi-way selection in C?",
-        options: ["if", "for", "switch", "while"],
-        answer: "switch"
-    },
-
-    {
-        question: "Which keyword is used to skip the remaining statements of the current loop iteration?",
-        options: ["break", "skip", "continue", "pass"],
-        answer: "continue"
-    },
-
-    {
-        question: "What is the size of an int data type in C?",
-        options: [
-            "Always 2 bytes",
-            "Always 4 bytes",
-            "Compiler/system dependent",
-            "Always 8 bytes"
-        ],
-        answer: "Compiler/system dependent"
-    }
-
-];
-
-function getRandomQuestions() {
-
-    const shuffled = [...questionBank]
-        .sort(() => Math.random() - 0.5);
-
-    return shuffled.slice(0, 5);
-}
-
-const questions = getRandomQuestions();
-
-let currentQuestion = 0;
-let score = 0;
-let timeLeft = 60;
-let selected = false;
-
-
-const questionElement =
-    document.getElementById("question");
-
-const optionsElement =
-    document.getElementById("options");
-
-const questionNumberElement =
-    document.getElementById("questionNumber");
-
-const totalQuestionsElement =
-    document.getElementById("totalQuestions");
-
-const nextBtn =
-    document.getElementById("nextBtn");
-
-const timerElement =
-    document.getElementById("timer");
-
-
-totalQuestionsElement.textContent =
-    questions.length;
-
-
-// Load question
-function loadQuestion() {
-
-    selected = false;
-
-    const current = questions[currentQuestion];
-
-    questionElement.textContent =
-        current.question;
-
-    questionNumberElement.textContent =
-        currentQuestion + 1;
-
-    optionsElement.innerHTML = "";
-
-
-    current.options.forEach(function (option) {
-
-        const button =
-            document.createElement("button");
-
-        button.textContent = option;
-
-        button.className =
-            "btn btn-outline-primary w-100 option-btn";
-
-
-        button.addEventListener("click", function () {
-
-            if (selected) {
-                return;
-            }
-
-            selected = true;
-
-            const allButtons =
-                optionsElement.querySelectorAll("button");
-
-            allButtons.forEach(function (btn) {
-
-                btn.disabled = true;
-
-            });
-
-
-            if (option === current.answer) {
-
-                score++;
-
-                button.classList.remove(
-                    "btn-outline-primary"
-                );
-
-                button.classList.add(
-                    "btn-success"
-                );
-
-            } else {
-
-                button.classList.remove(
-                    "btn-outline-primary"
-                );
-
-                button.classList.add(
-                    "btn-danger"
-                );
-
-            }
-
-        });
-
-
-        optionsElement.appendChild(button);
-
-    });
-
-}
-
-
-// Next button
-nextBtn.addEventListener("click", function () {
-
-    if (!selected) {
-
-        alert("Please select an answer.");
-
-        return;
-    }
-
-
-    currentQuestion++;
-
-
-    if (currentQuestion < questions.length) {
-
-        loadQuestion();
-
-    } else {
-
-        finishQuiz();
-
-    }
-
-});
-
-
-// Timer
-const timerInterval = setInterval(function () {
-
-    timeLeft--;
-
-    timerElement.textContent =
-        timeLeft;
-
-
-    if (timeLeft <= 0) {
-
-        clearInterval(timerInterval);
-
-        finishQuiz();
-
-    }
-
-}, 1000);
-
-
-// Finish quiz
-function finishQuiz() {
-
-    clearInterval(timerInterval);
-
-
-    const percentage =
-        Math.round(
-            (score / questions.length) * 100
-        );
-
-
-    const result = {
-
-        name: studentData.name,
-
-        branch: studentData.branch,
-
-        subject: studentData.subject,
-
-        score: score,
-
-        total: questions.length,
-
-        percentage: percentage,
-
-        date: new Date().toLocaleString()
-
-    };
-
-
-    // Save latest result
-    localStorage.setItem(
-        "quizResult",
-        JSON.stringify(result)
-    );
-
-
-    // Save history
-    let history =
-        JSON.parse(
-            localStorage.getItem("quizHistory")
-        ) || [];
-
-
-    history.push(result);
-
-
-    localStorage.setItem(
-        "quizHistory",
-        JSON.stringify(history)
-    );
-
-
-    window.location.href =
-        "result.html";
-
-}
-
-
-// Start first question
-loadQuestion();
-
-function logout() {
-
-    localStorage.removeItem("isLoggedIn");
-    localStorage.removeItem("studentData");
-
-    window.location.href = "index.html";
 }
