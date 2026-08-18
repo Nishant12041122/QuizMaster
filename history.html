@@ -10,262 +10,190 @@
 
     <title>QuizMaster - History</title>
 
-    <!-- Bootstrap CSS -->
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         rel="stylesheet">
 
-    <!-- Your CSS -->
-    <link rel="stylesheet"
-          href="style2.css">
-
-    <style>
-
-        .history-card {
-            border-radius: 18px;
-        }
-
-        /* Header */
-        .history-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        /* Back Image Button */
-        .back-btn {
-            width: 45px;
-            height: 45px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            text-decoration: none;
-
-            border: 1px solid #0d6efd;
-            border-radius: 50%;
-
-            transition: 0.2s;
-        }
-
-        .back-btn:hover {
-            background-color: #0d6efd;
-        }
-
-        .back-btn img {
-            width: 27px;
-            height: 27px;
-            object-fit: contain;
-        }
-
-        /* Title */
-        .history-title {
-            margin: 0;
-            padding: 0;
-        }
-
-        .history-subtitle {
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Table */
-        .table {
-            vertical-align: middle;
-        }
-
-        /* Mobile */
-        @media (max-width: 576px) {
-
-            .container {
-                padding-left: 10px !important;
-                padding-right: 10px !important;
-            }
-
-            .card {
-                padding: 15px !important;
-            }
-
-            .history-title {
-                font-size: 22px;
-            }
-
-            .history-subtitle {
-                font-size: 13px;
-            }
-
-            .back-btn {
-                width: 40px;
-                height: 40px;
-            }
-
-            .back-btn img {
-                width: 23px;
-                height: 23px;
-            }
-
-        }
-
-    </style>
+    <link
+        rel="stylesheet"
+        href="style2.css">
 
 </head>
 
-
 <body>
-
+      
+      
+ 
 
 <div class="container py-4">
 
-    <div class="card shadow-lg border-0 p-4 history-card">
 
+    <!-- Header -->
 
-        <!-- Header -->
+    <div class="d-flex
+                justify-content-between
+                align-items-center
+                mb-4">
 
-        <div class="history-header mb-4">
+        <div>
 
-            <!-- Back Button -->
+            <h2 class="text-primary fw-bold mb-1">
 
-            <a href="index.html"
-               class="back-btn"
-               aria-label="Back">
+                📊 Quiz History
 
-                <img src="exit.png"
-                     alt="Back">
+            </h2>
 
-            </a>
+            <p class="text-muted mb-0">
 
+                Your previous quiz results
 
-            <!-- Title -->
-
-            <div>
-
-                <h2 class="text-primary fw-bold history-title">
-                    Quiz History
-                </h2>
-
-                <p class="text-muted history-subtitle">
-                    Previous quiz attempts
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <hr>
-
-
-        <!-- Clear History Button -->
-
-        <div class="mb-3">
-
-            <button
-                type="button"
-                class="btn btn-outline-danger"
-                data-bs-toggle="modal"
-                data-bs-target="#passwordModal">
-
-                🗑️ Clear History
-
-            </button>
-
-        </div>
-
-
-        <!-- History Table -->
-
-        <div class="table-responsive">
-
-            <table class="table table-hover align-middle">
-
-                <thead class="table-primary">
-
-                    <tr>
-
-                        <th>#</th>
-
-                        <th>Name</th>
-
-                        <th>Branch</th>
-
-                        <th>Subject</th>
-
-                        <th>Score</th>
-
-                        <th>Percentage</th>
-
-                        <th>Date</th>
-
-                    </tr>
-
-                </thead>
-
-
-                <tbody id="historyTable">
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-
-        <!-- No History -->
-
-        <div
-            id="noHistory"
-            class="text-center text-muted py-4"
-            style="display: none;">
-
-            <div style="font-size: 40px;">
-                📭
-            </div>
-
-            <h5>
-                No Quiz History Found
-            </h5>
-
-            <p>
-                Complete a quiz to see your result here.
             </p>
 
         </div>
+          
 
+
+        <a
+            href="index.html"
+            class="btn btn-outline-primary">
+
+            🏠 Home
+
+        </a>
+
+    </div>
+      
+    
+
+
+
+    <!-- History Card -->
+
+    <div class="card shadow-lg border-0">
+
+        <div class="card-body">
+
+
+            <!-- No History -->
+
+            <div
+                id="noHistory"
+                class="text-center text-muted py-5"
+                style="display: none;">
+
+                <div style="font-size: 50px;">
+                    📭
+                </div>
+
+                <h4>
+                    No Quiz History
+                </h4>
+
+                <p>
+                    Complete a quiz to see your result here.
+                </p>
+
+                <a
+                    href="quiz.html"
+                    class="btn btn-primary">
+
+                    Start Quiz
+
+                </a>
+
+            </div>
+
+
+            <!-- Table -->
+
+            <div class="table-responsive">
+
+                <table
+                    class="table table-hover
+                           table-bordered
+                           align-middle
+                           text-center">
+
+                    <thead class="table-primary">
+
+                        <tr>
+
+                            <th>
+                                #
+                            </th>
+
+                            <th>
+                                Name
+                            </th>
+
+                            <th>
+                                Branch
+                            </th>
+
+                            <th>
+                                Subject
+                            </th>
+
+                            <th>
+                                Score
+                            </th>
+
+                            <th>
+                                Percentage
+                            </th>
+
+                            <th>
+                                Date
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody
+                        id="historyTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
 
     </div>
 
-</div>
+
+      <button
+        class="btn btn-danger mt-3"
+        data-bs-toggle="modal"
+        data-bs-target="#passwordModal">
+
+        🗑️ Clear Quiz History
+
+    </button>
 
 
-
-<!-- ========================= -->
 <!-- Password Modal -->
-<!-- ========================= -->
 
 <div
     class="modal fade"
     id="passwordModal"
-    tabindex="-1"
-    aria-hidden="true">
+    tabindex="-1">
 
+    <div class="modal-dialog
+                modal-dialog-centered">
 
-    <div class="modal-dialog modal-dialog-centered">
-
-
-        <div class="modal-content border-0 shadow">
-
-
-            <!-- Modal Header -->
+        <div class="modal-content">
 
             <div class="modal-header">
 
-                <h5 class="modal-title fw-bold">
+                <h5 class="modal-title">
 
                     🔐 Delete Quiz History
 
                 </h5>
-
 
                 <button
                     type="button"
@@ -277,57 +205,36 @@
             </div>
 
 
-            <!-- Modal Body -->
-
             <div class="modal-body">
 
                 <p class="text-muted">
 
-                    Enter password to delete all quiz history.
+                    Enter password to delete
+                    all quiz history.
 
                 </p>
 
 
-                <div class="mb-3">
+                <input
+                    type="password"
+                    id="deletePassword"
+                    class="form-control"
+                    placeholder="Enter password">
 
-                    <label
-                        for="deletePassword"
-                        class="form-label">
-
-                        Password
-
-                    </label>
-
-
-                    <input
-                        type="password"
-                        id="deletePassword"
-                        class="form-control"
-                        placeholder="Enter password">
-
-
-                </div>
-
-
-                <!-- Error -->
 
                 <div
                     id="passwordError"
-                    class="text-danger small"
+                    class="text-danger mt-2"
                     style="display: none;">
 
-                    Incorrect password!
+                    ❌ Incorrect password.
 
                 </div>
-
 
             </div>
 
 
-            <!-- Modal Footer -->
-
             <div class="modal-footer">
-
 
                 <button
                     type="button"
@@ -348,16 +255,13 @@
 
                 </button>
 
-
             </div>
-
 
         </div>
 
     </div>
 
 </div>
-
 
 
 <!-- Bootstrap JS -->
@@ -370,7 +274,6 @@
 <!-- History JS -->
 
 <script src="history.js"></script>
-
 
 </body>
 
