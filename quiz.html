@@ -5,27 +5,35 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
     <title>QuizMaster - Quiz</title>
 
+    <!-- Bootstrap -->
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         rel="stylesheet">
 
-    <link rel="stylesheet"
-          href="style2.css">
+    <!-- Your CSS -->
+    <link
+        rel="stylesheet"
+        href="style2.css">
 
 </head>
+
 
 <body>
 
 <div class="container py-4">
 
-    <!-- Header -->
+    <!-- ======================================
+         HEADER
+    ======================================= -->
 
-    <div class="d-flex justify-content-between align-items-center mb-4">
+    <div
+        class="d-flex justify-content-between align-items-center mb-4">
 
         <div>
 
@@ -33,14 +41,17 @@
                 QuizMaster
             </h3>
 
-            <p id="studentInfo"
-               class="text-muted mb-0">
+            <p
+                id="studentInfo"
+                class="text-muted mb-0">
             </p>
 
         </div>
 
+
         <button
-            onclick="logout()"
+            id="logoutBtn"
+            type="button"
             class="btn btn-outline-danger">
 
             Logout
@@ -50,27 +61,61 @@
     </div>
 
 
-    <!-- Quiz Card -->
+    <!-- ======================================
+         QUIZ CARD
+    ======================================= -->
 
-    <div class="card shadow-lg border-0 p-4 mx-auto"
-         style="max-width: 700px;">
+    <div
+        class="card shadow-lg border-0 p-4 mx-auto"
+        style="max-width: 700px;">
 
-        <div class="d-flex justify-content-between">
+
+        <!-- Quiz Header -->
+
+        <div
+            class="d-flex justify-content-between align-items-center">
+
 
             <div>
 
-                <h3 class="text-primary fw-bold">
-                    QuizMaster
-                </h3>
+                <h4 class="text-primary fw-bold mb-1">
+                    C Programming
+                </h4>
+
+
+                <p class="text-muted mb-0">
+
+                    Question
+
+                    <span id="questionNumber">
+                        1
+                    </span>
+
+                    of
+
+                    <span id="totalQuestions">
+                        5
+                    </span>
+
+                </p>
 
             </div>
 
+
+            <!-- Timer -->
+
             <div>
 
-                <span class="badge bg-danger fs-6">
+                <span
+                    class="badge bg-danger fs-6">
 
                     ⏱️
-                    <span id="timer">60</span>s
+
+                    <span id="timer">
+                        60
+                    </span>
+
+                    s
 
                 </span>
 
@@ -78,44 +123,34 @@
 
         </div>
 
+
         <hr>
 
 
-        <!-- Question Number -->
+        <!-- ==================================
+             QUESTION
+        =================================== -->
 
-        <p class="text-muted">
-
-            Question
-
-            <span id="questionNumber">
-                1
-            </span>
-
-            of
-
-            <span id="totalQuestions">
-                5
-            </span>
-
-        </p>
-
-
-        <!-- Question -->
-
-        <h4 id="question"
+        <h4
+            id="question"
             class="fw-bold mb-4">
         </h4>
 
 
-        <!-- Options -->
+        <!-- ==================================
+             OPTIONS
+        =================================== -->
 
         <div id="options"></div>
 
 
-        <!-- Next -->
+        <!-- ==================================
+             NEXT BUTTON
+        =================================== -->
 
         <button
             id="nextBtn"
+            type="button"
             class="btn btn-primary w-100 mt-3">
 
             Next Question
@@ -127,13 +162,47 @@
 </div>
 
 
-<!-- Supabase -->
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<!-- ==========================================
+     SUPABASE LIBRARY
+=========================================== -->
 
-<!-- Quiz JavaScript -->
+<script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2">
+</script>
+
+
+
+<!-- ==========================================
+     SUPABASE CONFIGURATION
+=========================================== -->
+
+<script>
+
+    const SUPABASE_URL =
+        "https://osjkvgvcmckfhgaduqhs.supabase.co";
+
+
+    const SUPABASE_ANON_KEY =
+        "sb_publishable_yV6A7fUZkAocBB48cDHdCg_tdgt3Z4F";
+
+
+    const supabaseClient =
+        window.supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_ANON_KEY
+        );
+
+</script>
+
+
+
+<!-- ==========================================
+     QUIZ JAVASCRIPT
+=========================================== -->
 
 <script src="quiz.js"></script>
+
 
 </body>
 
