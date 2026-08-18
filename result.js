@@ -1,3 +1,7 @@
+// ==========================================
+// GET RESULT
+// ==========================================
+
 const result = JSON.parse(
     localStorage.getItem("quizResult")
 );
@@ -5,29 +9,55 @@ const result = JSON.parse(
 
 if (!result) {
 
-    window.location.href = "index.html";
+    window.location.href =
+        "index.html";
 
 }
 
 
-document.getElementById("studentName").textContent =
+// ==========================================
+// SHOW RESULT
+// ==========================================
+
+document.getElementById(
+    "studentName"
+).textContent =
     result.name;
 
-document.getElementById("branch").textContent =
+
+document.getElementById(
+    "branch"
+).textContent =
     result.branch;
 
-document.getElementById("subject").textContent =
+
+document.getElementById(
+    "subject"
+).textContent =
     result.subject;
 
-document.getElementById("score").textContent =
+
+document.getElementById(
+    "score"
+).textContent =
     result.score;
 
-document.getElementById("total").textContent =
+
+document.getElementById(
+    "total"
+).textContent =
     result.total;
 
-document.getElementById("percentage").textContent =
+
+document.getElementById(
+    "percentage"
+).textContent =
     result.percentage;
 
+
+// ==========================================
+// PASS / FAIL
+// ==========================================
 
 const status =
     document.getElementById("status");
@@ -35,7 +65,8 @@ const status =
 
 if (result.percentage >= 40) {
 
-    status.textContent = "PASS";
+    status.textContent =
+        "PASS";
 
     status.classList.add(
         "bg-success"
@@ -43,7 +74,8 @@ if (result.percentage >= 40) {
 
 } else {
 
-    status.textContent = "FAIL";
+    status.textContent =
+        "FAIL";
 
     status.classList.add(
         "bg-danger"
