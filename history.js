@@ -1,157 +1,149 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
 
-    loadHistory();
+        loadHistory();
 
-});
+    }
+);
 
 
 // ==========================================
-// Load Quiz History
+// LOAD HISTORY
 // ==========================================
 
 function loadHistory() {
 
     const historyTable =
-        document.getElementById("historyTable");
+        document.getElementById(
+            "historyTable"
+        );
 
     const noHistory =
-        document.getElementById("noHistory");
+        document.getElementById(
+            "noHistory"
+        );
 
-
-    // Get history from Local Storage
 
     let history =
         JSON.parse(
-            localStorage.getItem("quizHistory")
+            localStorage.getItem(
+                "quizHistory"
+            )
         ) || [];
 
-
-    // Clear old table
 
     historyTable.innerHTML = "";
 
 
-    // If no history
+    // No history
 
     if (history.length === 0) {
 
-        noHistory.style.display = "block";
+        noHistory.style.display =
+            "block";
 
         return;
 
     }
 
 
-    noHistory.style.display = "none";
+    noHistory.style.display =
+        "none";
 
 
-    // Show latest result first
+    // Latest first
 
     history
         .slice()
         .reverse()
-        .forEach(function (result, index) {
+        .forEach(
+            function (result, index) {
+
+                const row =
+                    document.createElement(
+                        "tr"
+                    );
 
 
-            const row =
-                document.createElement("tr");
+                const branch =
+                    result.branch || "N/A";
 
 
-            // Branch fallback
-            // This prevents "undefined"
-
-            const branch =
-                result.branch || "N/A";
+                const score =
+                    result.score ?? 0;
 
 
-            // Score
-
-            const score =
-                result.score ?? 0;
+                const total =
+                    result.total ?? 0;
 
 
-            const total =
-                result.total ?? 0;
+                const percentage =
+                    result.percentage ?? 0;
 
 
-            // Percentage
-
-            const percentage =
-                result.percentage ?? 0;
+                const date =
+                    result.date || "N/A";
 
 
-            // Date
+                row.innerHTML = `
 
-            const date =
-                result.date || "N/A";
+                    <td>
+                        ${index + 1}
+                    </td>
 
+                    <td>
+                        ${result.name || "N/A"}
+                    </td>
 
-            // Result row
+                    <td>
+                        ${branch}
+                    </td>
 
-            row.innerHTML = `
+                    <td>
+                        ${result.subject || "N/A"}
+                    </td>
 
-                <td>
-                    ${index + 1}
-                </td>
+                    <td>
+                        ${score}/${total}
+                    </td>
 
+                    <td>
 
-                <td>
-                    ${result.name || "N/A"}
-                </td>
+                        <span class="badge ${
+                            percentage >= 40
+                                ? "bg-success"
+                                : "bg-danger"
+                        }">
 
+                            ${percentage}%
 
-                <td>
-                    ${branch}
-                </td>
+                        </span>
 
+                    </td>
 
-                <td>
-                    ${result.subject || "N/A"}
-                </td>
+                    <td>
+                        ${date}
+                    </td>
 
-
-                <td>
-                    ${score}/${total}
-                </td>
-
-
-                <td>
-
-                    <span class="badge ${
-                        percentage >= 40
-                            ? "bg-success"
-                            : "bg-danger"
-                    }">
-
-                        ${percentage}%
-
-                    </span>
-
-                </td>
+                `;
 
 
-                <td>
-                    ${date}
-                </td>
+                historyTable.appendChild(
+                    row
+                );
 
-            `;
-
-
-            historyTable.appendChild(row);
-
-
-        });
+            }
+        );
 
 }
 
 
-
 // ==========================================
-// Clear Quiz History
+// DELETE HISTORY
 // ==========================================
 
 function confirmDeleteHistory() {
-
 
     const password =
         document.getElementById(
@@ -170,27 +162,19 @@ function confirmDeleteHistory() {
     if (password === "1980") {
 
 
-        // Delete ONLY quiz history
-
         localStorage.removeItem(
             "quizHistory"
         );
 
-
-        // Clear password field
 
         document.getElementById(
             "deletePassword"
         ).value = "";
 
 
-        // Hide error
-
         passwordError.style.display =
             "none";
 
-
-        // Close modal
 
         const modalElement =
             document.getElementById(
@@ -211,8 +195,6 @@ function confirmDeleteHistory() {
         }
 
 
-        // Reload history
-
         loadHistory();
 
 
@@ -224,8 +206,6 @@ function confirmDeleteHistory() {
     } else {
 
 
-        // Wrong password
-
         passwordError.style.display =
             "block";
 
@@ -233,7 +213,6 @@ function confirmDeleteHistory() {
         document.getElementById(
             "deletePassword"
         ).value = "";
-
 
     }
 
